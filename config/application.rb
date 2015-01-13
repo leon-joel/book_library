@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module BoolLibrary
+module BookLibrary
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -19,5 +19,13 @@ module BoolLibrary
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+
+    # rails generate controller コマンドで, デフォルトでは helper と assets を生成させないようにする。
+    # コマンドにおける --no-helper --no-assets オプションと同じ効果。
+    config.generators do |g|
+      g.assets  false
+      g.helper  false
+    end
   end
 end

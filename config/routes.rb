@@ -3,11 +3,24 @@ Rails.application.routes.draw do
   # resources :users, only: %i(index new create)
   resources :users
 
+  # これは「/admin」にGETリクエストが来ると
+  #「Admin::BooksController」の「index」アクションを実行することを示しています。
+  get 'admin' => 'admin/books#index'
+  # 「rake routes」コマンドでルーティングが確認出来る。
+
+  # ルーティングパラメーター (:id)
+  get 'admin/:id' => 'admin/books#show'
+
+  #
+  # post 'admin' => 'admin/books#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  # アプリケーションのURLのルートや、名前空間のルートにリクエストがあったときに対応するアクションを定義
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root "books#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
