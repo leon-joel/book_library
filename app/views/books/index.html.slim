@@ -1,0 +1,42 @@
+/! Slim Template Engine (This comment will be written into HTML output.)
+
+/ Comment (This comment will NOT be written into HTML.)
+
+
+h1 Listing books (Slim Edition)
+
+/ 
+#flash
+  / same as <%= %> 
+  = flash[:notice]
+
+
+table
+  thead
+    tr
+      th Title
+      th Author
+      th Outline
+      th
+      th
+      th
+
+  tbody
+    / same as <% %> 
+    - @books.each do |book|
+      tr
+        td = book.title
+        td = book.author
+        td = book.outline
+/        td = conv_break book.Outline    # my helper method doesn't work!!!
+        td = link_to 'Show', book
+        td = link_to 'Edit', edit_book_path(book)
+        td = link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }
+br
+
+/ = link_to 'New Book', new_book_path
+= link_to 'New Book', new_book_path
+br
+= image_tag('https://codeclimate.com/github/slim-template/slim.png', alt: "New Book")
+br
+= link_to image_tag('https://codeclimate.com/github/slim-template/slim.png', alt: "New Book"), new_book_path

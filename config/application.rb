@@ -27,5 +27,9 @@ module BookLibrary
       g.assets  false
       g.helper  false
     end
+
+
+    # デフォルトのテンプレートエンジンをslimに変更。これでrails g した際にはデフォルトでslimになります。
+    # config.generators.template_engine = :slim  
   end
 end
