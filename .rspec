@@ -1,0 +1,8 @@
+--color
+
+#--warning
+# it comes too many warnings...
+# http://stackoverflow.com/questions/24072876/too-many-warnings-about-circular-require-when-run-rspec
+
+--require spec_helper
+
