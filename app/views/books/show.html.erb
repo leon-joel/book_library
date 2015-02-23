@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <!-- 埋め込み変数をハッシュとして引数に追加して翻訳文を呼び出すことができます。 -->
+  <strong><%= t('.title', title: @book.title) %>:</strong>
   <%= @book.title %>
 </p>
 
 <p>
-  <strong>Author:</strong>
+  <strong><%= t('.author') %>:</strong>
   <%= @book.author %>
 </p>
 

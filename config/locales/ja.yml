@@ -19,24 +19,26 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+ja:
+  hello: "こんにちは"
 
   # モデルのロケール
   activerecord:
     models:
-      book: Book
-      user: User
+      book: 書籍
+      user: ユーザー
 
     attributes:
       book:
-        title: Title
-        author: Author
-        outline: Outline
+        title: タイトル
+        author: 著者
+        outline: 概要
 
   # ビューのパスを反映したロケールを書いて構造化すると、ビューではパスを省略したキーで済みます。
   books:
     index:
-      title: Titles
-      author: Authors
-      outline: Outlines
+      title: 書籍一覧
+      author: 著者v
+      outline: 概要v
+    show:
+      title: 書籍情報 [%{title}]
